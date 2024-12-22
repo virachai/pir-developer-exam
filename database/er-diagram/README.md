@@ -72,7 +72,8 @@ erDiagram
         string variant_id PK
         string product_code FK
         string variant_name
-        decimal price
+        decimal costPrice
+        decimal sellingPrice
         integer stock_quantity
         string sku
         string color
