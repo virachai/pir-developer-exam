@@ -1,4 +1,5 @@
-## โจทย์
+# โจทย์
+
 จาก Class ShoppingCart นี้จงค้นหาและอธิบาย Bug ที่เกิดขึ้นอย่างละเอียด และให้ทำการแก้ไขโค๊ดในส่วนที่เป็น Bug ภายใน class นี้ให้ทำงานให้ถูกต้องนี้
 
 ```typescript
@@ -17,7 +18,7 @@ class ShoppingCart {
   private taxRate: number = 0.07;
 
   public addItem(item: Product, quantity: number): void {
-    const existingItemIndex = this.items.findIndex(i => i.id === item.id);
+    const existingItemIndex = this.items.findIndex((i) => i.id === item.id);
     if (existingItemIndex !== -1) {
       this.items[existingItemIndex].quantity += quantity;
     } else {
@@ -26,11 +27,14 @@ class ShoppingCart {
   }
 
   public removeItem(itemId: string): void {
-    this.items = this.items.filter(item => item.id !== itemId);
+    this.items = this.items.filter((item) => item.id !== itemId);
   }
 
   public calculateSubtotal(): number {
-    return this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return this.items.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
   }
 
   public calculateTax(subtotal: number): number {
@@ -40,7 +44,7 @@ class ShoppingCart {
   public calculateTotal(): number {
     const subtotal = this.calculateSubtotal();
     const tax = this.calculateTax(subtotal);
-    
+
     return Math.floor((subtotal + tax) * 100) / 100;
   }
 
@@ -48,13 +52,15 @@ class ShoppingCart {
     const subtotal = this.calculateSubtotal();
     const tax = this.calculateTax(subtotal);
     const total = this.calculateTotal();
-    
-    return `Subtotal: $${subtotal.toFixed(2)}, Tax: $${tax.toFixed(2)}, Total: $${total.toFixed(2)}`;
+
+    return `Subtotal: $${subtotal.toFixed(2)}, Tax: $${tax.toFixed(
+      2
+    )}, Total: $${total.toFixed(2)}`;
   }
 
   public applyDiscount(discountPercentage: number): void {
-    this.items.forEach(item => {
-      item.price *= (1 - discountPercentage / 100);
+    this.items.forEach((item) => {
+      item.price *= 1 - discountPercentage / 100;
     });
   }
 }
@@ -62,8 +68,8 @@ class ShoppingCart {
 // Usage example
 const cart = new ShoppingCart();
 
-cart.addItem({ id: '1', name: 'Laptop', price: 999.99, quantity: 1 });
-cart.addItem({ id: '2', name: 'T-Shirt', price: 19.99, quantity: 2 });
+cart.addItem({ id: "1", name: "Laptop", price: 999.99, quantity: 1 });
+cart.addItem({ id: "2", name: "T-Shirt", price: 19.99, quantity: 2 });
 
 console.log(cart.getCartSummary());
 
