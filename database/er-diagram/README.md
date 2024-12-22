@@ -8,7 +8,6 @@
 - **ลูกค้า:** มีข้อมูลส่วนบุคคล ประวัติการสั่งซื้อ และที่อยู่จัดส่ง
 - **การสั่งซื้อ:** มีกระบวนการชำระเงิน การจัดส่ง และการคืนสินค้า
 - **การชำระเงิน:** รองรับหลายช่องทางการชำระเงิน
-- **โปรโมชั่น:** มีการจัดโปรโมชั่นส่วนลด คูปอง หรือแคมเปญต่างๆ
 
 **โครงสร้างฐานข้อมูลเบื้องต้น:**
 
@@ -51,6 +50,8 @@
 [Mermaid editor](https://www.mermaidchart.com/app/projects/926bfea7-aaf3-4eac-83ea-5eb611e376c7/diagrams/c4d37c11-17bd-46e9-9b12-ef55b5c75df3/version/v0.1/edit)
 
 [Mermaid Diagram](https://www.mermaidchart.com/raw/c4d37c11-17bd-46e9-9b12-ef55b5c75df3)
+
+![ER Diagram for Inventory Management System](er-diagram-for-inventory-management-system_v02.png)
 
 ## MMD (Mermaid Diagram)
 
